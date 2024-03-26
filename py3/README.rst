@@ -1,13 +1,13 @@
 ====================
-bisos.cmdb
+unisos.marme Library
 ====================
 
 .. contents::
    :depth: 3
 ..
 
-BISOS's CMDB (Configuration Management DataBase) /DCIM (Data Center Infrastructure Management)
-
+BISOS’s CMDB (Configuration Management DataBase) /DCIM (Data Center
+Infrastructure Management)
 
 Support
 =======
