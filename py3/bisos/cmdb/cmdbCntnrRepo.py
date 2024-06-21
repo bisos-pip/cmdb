@@ -397,6 +397,265 @@ class cmdbCntnr_fps(cs.Cmnd):
         return cmndArgsSpecDict
 
 
+
+####+BEGIN: b:py3:cs:cmnd/classHead :cmndName "cmdbCntnr_fps" :comment "" :extent "verify" :parsMand "bpoId envRelPath" :argsMin 1 :argsMax 9999 :pyInv ""
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CmndSvc-   [[elisp:(outline-show-subtree+toggle)][||]] <<cmdbCntnr_fps>>  =verify= parsMand=bpoId envRelPath argsMin=1 argsMax=9999 ro=cli   [[elisp:(org-cycle)][| ]]
+#+end_org """
+class cmdbCntnr_fps(cs.Cmnd):
+    cmndParamsMandatory = [ 'bpoId', 'envRelPath', ]
+    cmndParamsOptional = [ ]
+    cmndArgsLen = {'Min': 1, 'Max': 9999,}
+
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmnd(self,
+             rtInv: cs.RtInvoker,
+             cmndOutcome: b.op.Outcome,
+             bpoId: typing.Optional[str]=None,  # Cs Mandatory Param
+             envRelPath: typing.Optional[str]=None,  # Cs Mandatory Param
+             argsList: typing.Optional[list[str]]=None,  # CsArgs
+    ) -> b.op.Outcome:
+
+        failed = b_io.eh.badOutcome
+        callParamsDict = {'bpoId': bpoId, 'envRelPath': envRelPath, }
+        if self.invocationValidate(rtInv, cmndOutcome, callParamsDict, argsList).isProblematic():
+            return failed(cmndOutcome)
+        cmndArgsSpecDict = self.cmndArgsSpec()
+        bpoId = csParam.mappedValue('bpoId', bpoId)
+        envRelPath = csParam.mappedValue('envRelPath', envRelPath)
+####+END:
+        self.cmndDocStr(f""" #+begin_org
+** [[elisp:(org-cycle)][| *CmndDesc:* | ]]  A starting point command.
+        #+end_org """)
+
+        cmndArgsSpecDict = self.cmndArgsSpec()
+
+        action = self.cmndArgsGet("0", cmndArgsSpecDict, argsList)
+        actionArgs = self.cmndArgsGet("1&9999", cmndArgsSpecDict, argsList)
+
+        #fpsBase = os.path.join(bpo.bpoBaseDir_obtain(bpoId), envRelPath)
+
+        basedFps = b.pattern.sameInstance(CmdbCntnr_FPs, bpoId, envRelPath)
+
+        fpsBase = basedFps.basePath_obtain()
+
+        if action == "getExamples" or action == "setExamples":
+            # print(f"With fpBase={fpsBase} and cls={CmdbCntnr_FPs} name={basedFps.__class__.__name__}.")
+            if b.fpCls.fpParamsReveal(cmndOutcome=cmndOutcome).cmnd(
+                    rtInv=rtInv,
+                    cmndOutcome=cmndOutcome,
+                    fpBase=fpsBase,
+                    cls=basedFps.__class__.__name__,
+                    argsList=[action],
+            ).isProblematic(): return(b_io.eh.badOutcome(cmndOutcome))
+
+        elif action == "menu":
+            print(f"With fpBase={fpsBase} and cls={CmdbCntnr_FPs} NOTYET.")
+        else:
+            print(f"bad input {action}")
+
+        return(cmndOutcome)
+
+####+BEGIN: b:py3:cs:method/args :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList "self"
+    """ #+begin_org
+**  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  Mtd-T-anyOrNone [[elisp:(outline-show-subtree+toggle)][||]] /cmndArgsSpec/ deco=default  deco=default   [[elisp:(org-cycle)][| ]]
+    #+end_org """
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmndArgsSpec(self, ):
+####+END:
+        """  #+begin_org
+** [[elisp:(org-cycle)][| *cmndArgsSpec:* | ]]
+        #+end_org """
+
+        cmndArgsSpecDict = cs.arg.CmndArgsSpecDict()
+        cmndArgsSpecDict.argsDictAdd(
+            argPosition="0",
+            argName="action",
+            argChoices=['getExamples', 'setExamples',],
+            argDescription="Action to be specified by rest"
+        )
+        cmndArgsSpecDict.argsDictAdd(
+            argPosition="1&9999",
+            argName="actionArgs",
+            argChoices=[],
+            argDescription="Rest of args for use by action"
+        )
+
+        return cmndArgsSpecDict
+
+####+BEGIN: b:py3:cs:cmnd/classHead :cmndName "cmdbCntnr_fps_init" :comment "" :extent "verify" :parsMand "bpoId envRelPath" :argsMin 1 :argsMax 9999 :pyInv ""
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CmndSvc-   [[elisp:(outline-show-subtree+toggle)][||]] <<cmdbCntnr_fps_init>>  =verify= parsMand=bpoId envRelPath argsMin=1 argsMax=9999 ro=cli   [[elisp:(org-cycle)][| ]]
+#+end_org """
+class cmdbCntnr_fps_init(cs.Cmnd):
+    cmndParamsMandatory = [ 'bpoId', 'envRelPath', ]
+    cmndParamsOptional = [ ]
+    cmndArgsLen = {'Min': 1, 'Max': 9999,}
+
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmnd(self,
+             rtInv: cs.RtInvoker,
+             cmndOutcome: b.op.Outcome,
+             bpoId: typing.Optional[str]=None,  # Cs Mandatory Param
+             envRelPath: typing.Optional[str]=None,  # Cs Mandatory Param
+             argsList: typing.Optional[list[str]]=None,  # CsArgs
+    ) -> b.op.Outcome:
+
+        failed = b_io.eh.badOutcome
+        callParamsDict = {'bpoId': bpoId, 'envRelPath': envRelPath, }
+        if self.invocationValidate(rtInv, cmndOutcome, callParamsDict, argsList).isProblematic():
+            return failed(cmndOutcome)
+        cmndArgsSpecDict = self.cmndArgsSpec()
+        bpoId = csParam.mappedValue('bpoId', bpoId)
+        envRelPath = csParam.mappedValue('envRelPath', envRelPath)
+####+END:
+        self.cmndDocStr(f""" #+begin_org
+** [[elisp:(org-cycle)][| *CmndDesc:* | ]]  A starting point command.
+        #+end_org """)
+
+        cmndArgsSpecDict = self.cmndArgsSpec()
+
+        action = self.cmndArgsGet("0", cmndArgsSpecDict, argsList)
+        actionArgs = self.cmndArgsGet("1&9999", cmndArgsSpecDict, argsList)
+
+        #fpsBase = os.path.join(bpo.bpoBaseDir_obtain(bpoId), envRelPath)
+
+        basedFps = b.pattern.sameInstance(CmdbCntnr_FPs, bpoId, envRelPath)
+
+        fpsBase = basedFps.basePath_obtain()
+
+        if action == "getExamples" or action == "setExamples":
+            # print(f"With fpBase={fpsBase} and cls={CmdbCntnr_FPs} name={basedFps.__class__.__name__}.")
+            if b.fpCls.fpParamsReveal(cmndOutcome=cmndOutcome).cmnd(
+                    rtInv=rtInv,
+                    cmndOutcome=cmndOutcome,
+                    fpBase=fpsBase,
+                    cls=basedFps.__class__.__name__,
+                    argsList=[action],
+            ).isProblematic(): return(b_io.eh.badOutcome(cmndOutcome))
+
+        elif action == "menu":
+            print(f"With fpBase={fpsBase} and cls={CmdbCntnr_FPs} NOTYET.")
+        else:
+            print(f"bad input {action}")
+
+        return(cmndOutcome)
+
+####+BEGIN: b:py3:cs:method/args :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList "self"
+    """ #+begin_org
+**  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  Mtd-T-anyOrNone [[elisp:(outline-show-subtree+toggle)][||]] /cmndArgsSpec/ deco=default  deco=default   [[elisp:(org-cycle)][| ]]
+    #+end_org """
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmndArgsSpec(self, ):
+####+END:
+        """  #+begin_org
+** [[elisp:(org-cycle)][| *cmndArgsSpec:* | ]]
+        #+end_org """
+
+        cmndArgsSpecDict = cs.arg.CmndArgsSpecDict()
+        cmndArgsSpecDict.argsDictAdd(
+            argPosition="0",
+            argName="action",
+            argChoices=['getExamples', 'setExamples',],
+            argDescription="Action to be specified by rest"
+        )
+        cmndArgsSpecDict.argsDictAdd(
+            argPosition="1&9999",
+            argName="actionArgs",
+            argChoices=[],
+            argDescription="Rest of args for use by action"
+        )
+
+        return cmndArgsSpecDict
+
+
+####+BEGIN: b:py3:cs:cmnd/classHead :cmndName "cmdbCntnr_facterCapture" :comment "" :extent "verify" :parsMand "bpoId envRelPath" :argsMin 1 :argsMax 9999 :pyInv ""
+""" #+begin_org
+*  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  CmndSvc-   [[elisp:(outline-show-subtree+toggle)][||]] <<cmdbCntnr_facterCapture>>  =verify= parsMand=bpoId envRelPath argsMin=1 argsMax=9999 ro=cli   [[elisp:(org-cycle)][| ]]
+#+end_org """
+class cmdbCntnr_facterCapture(cs.Cmnd):
+    cmndParamsMandatory = [ 'bpoId', 'envRelPath', ]
+    cmndParamsOptional = [ ]
+    cmndArgsLen = {'Min': 1, 'Max': 9999,}
+
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmnd(self,
+             rtInv: cs.RtInvoker,
+             cmndOutcome: b.op.Outcome,
+             bpoId: typing.Optional[str]=None,  # Cs Mandatory Param
+             envRelPath: typing.Optional[str]=None,  # Cs Mandatory Param
+             argsList: typing.Optional[list[str]]=None,  # CsArgs
+    ) -> b.op.Outcome:
+
+        failed = b_io.eh.badOutcome
+        callParamsDict = {'bpoId': bpoId, 'envRelPath': envRelPath, }
+        if self.invocationValidate(rtInv, cmndOutcome, callParamsDict, argsList).isProblematic():
+            return failed(cmndOutcome)
+        cmndArgsSpecDict = self.cmndArgsSpec()
+        bpoId = csParam.mappedValue('bpoId', bpoId)
+        envRelPath = csParam.mappedValue('envRelPath', envRelPath)
+####+END:
+        self.cmndDocStr(f""" #+begin_org
+** [[elisp:(org-cycle)][| *CmndDesc:* | ]]  A starting point command.
+        #+end_org """)
+
+        cmndArgsSpecDict = self.cmndArgsSpec()
+
+        action = self.cmndArgsGet("0", cmndArgsSpecDict, argsList)
+        actionArgs = self.cmndArgsGet("1&9999", cmndArgsSpecDict, argsList)
+
+        #fpsBase = os.path.join(bpo.bpoBaseDir_obtain(bpoId), envRelPath)
+
+        basedFps = b.pattern.sameInstance(CmdbCntnr_FPs, bpoId, envRelPath)
+
+        fpsBase = basedFps.basePath_obtain()
+
+        if action == "getExamples" or action == "setExamples":
+            # print(f"With fpBase={fpsBase} and cls={CmdbCntnr_FPs} name={basedFps.__class__.__name__}.")
+            if b.fpCls.fpParamsReveal(cmndOutcome=cmndOutcome).cmnd(
+                    rtInv=rtInv,
+                    cmndOutcome=cmndOutcome,
+                    fpBase=fpsBase,
+                    cls=basedFps.__class__.__name__,
+                    argsList=[action],
+            ).isProblematic(): return(b_io.eh.badOutcome(cmndOutcome))
+
+        elif action == "menu":
+            print(f"With fpBase={fpsBase} and cls={CmdbCntnr_FPs} NOTYET.")
+        else:
+            print(f"bad input {action}")
+
+        return(cmndOutcome)
+
+####+BEGIN: b:py3:cs:method/args :methodName "cmndArgsSpec" :methodType "anyOrNone" :retType "bool" :deco "default" :argsList "self"
+    """ #+begin_org
+**  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_ _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_ [[elisp:(outline-show-branches+toggle)][|=]] [[elisp:(bx:orgm:indirectBufOther)][|>]] *[[elisp:(blee:ppmm:org-mode-toggle)][|N]]*  Mtd-T-anyOrNone [[elisp:(outline-show-subtree+toggle)][||]] /cmndArgsSpec/ deco=default  deco=default   [[elisp:(org-cycle)][| ]]
+    #+end_org """
+    @cs.track(fnLoc=True, fnEntry=True, fnExit=True)
+    def cmndArgsSpec(self, ):
+####+END:
+        """  #+begin_org
+** [[elisp:(org-cycle)][| *cmndArgsSpec:* | ]]
+        #+end_org """
+
+        cmndArgsSpecDict = cs.arg.CmndArgsSpecDict()
+        cmndArgsSpecDict.argsDictAdd(
+            argPosition="0",
+            argName="action",
+            argChoices=['getExamples', 'setExamples',],
+            argDescription="Action to be specified by rest"
+        )
+        cmndArgsSpecDict.argsDictAdd(
+            argPosition="1&9999",
+            argName="actionArgs",
+            argChoices=[],
+            argDescription="Rest of args for use by action"
+        )
+
+        return cmndArgsSpecDict
+
+
+
 ####+BEGIN: b:py3:cs:framework/endOfFile :basedOn "classification"
 """ #+begin_org
 * [[elisp:(org-cycle)][| *End-Of-Editable-Text* |]] :: emacs and org variables and control parameters
