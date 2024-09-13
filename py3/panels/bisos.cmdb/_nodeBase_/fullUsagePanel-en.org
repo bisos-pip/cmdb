@@ -1,17 +1,17 @@
 * B|
 ####+BEGIN: bxPanel:common/title-plus
-#+title: py3/panels
+#+title: panels/bisos.cmdb
 #+roam_tags: branch
-#+roam_key: cmdb/py3/panels
-[[roam:cmdb/py3]]
+#+roam_key: py3/panels/bisos.cmdb
+[[roam:py3/panels]]
 ####+END
 ####+BEGIN: blee:bxPanel:topPanelControls
 *  [[elisp:(org-cycle)][|#Control|]] :: [[elisp:(blee:bnsm:menu-back)][Back]] [[elisp:(toggle-read-only)][read/wr]] | [[elisp:(show-all)][Show-All]]  [[elisp:(org-shifttab)][Overview]]  [[elisp:(progn (org-shifttab) (org-content))][Content]] | [[elisp:(delete-other-windows)][(1)]] | [[elisp:(progn (save-buffer) (kill-buffer))][S&Q]] [[elisp:(save-buffer)][Save]] [[elisp:(kill-buffer)][Quit]] [[elisp:(bury-buffer)][Bury]]  [[elisp:(magit)][Magit]]  [[elisp:(org-cycle)][| ]]
 **  [[elisp:(bap:magit:bisos:current-bpo-repos/visit)][BPO-Repos-Magit]] ||
 **  [[elisp:(blee:buf:re-major-mode)][Re-Major-Mode]] ||  [[elisp:(org-dblock-update-buffer-bx)][Update Buf Dblocks]] || [[elisp:(org-dblock-bx-blank-buffer)][Blank Buf Dblocks]] || [[elisp:(bx:panel:variablesShow)][bx:panel:variablesShow]]
 **  [[elisp:(blee:menu-sel:comeega:maintenance:popupMenu)][||Maintenance]]
-**  This File :: *= /bisos/git/bxRepos/bisos-pip/cmdb/py3/panels/_nodeBase_/fullUsagePanel-en.org =*
-* /file-truename:/  /bisos/git/auth/bxRepos/bisos-pip/cmdb/py3/panels/_nodeBase_/fullUsagePanel-en.org
+**  This File :: *= /bisos/git/bxRepos/bisos-pip/cmdb/py3/panels/bisos.cmdb/_nodeBase_/fullUsagePanel-en.org =*
+* /file-truename:/  /bisos/git/auth/bxRepos/bisos-pip/cmdb/py3/panels/bisos.cmdb/_nodeBase_/fullUsagePanel-en.org
 *  [[elisp:(org-cycle)][|#Select|]]  :: (Results: [[elisp:(blee:bnsm:results-here)][Here]] | [[elisp:(blee:bnsm:results-split-below)][Below]] | [[elisp:(blee:bnsm:results-split-right)][Right]] | [[elisp:(blee:bnsm:results-other)][Other]] | [[elisp:(blee:bnsm:results-popup)][Popup]]) (Select:  [[elisp:(lsip-local-run-command "lpCurrentsAdmin.sh -i currentsGetThenShow")][Show Currents]]  [[elisp:(lsip-local-run-command "lpCurrentsAdmin.sh")][lpCurrentsAdmin.sh]] ) [[elisp:(org-cycle)][| ]]
 **  #See:  (Window: [[elisp:(blee:bnsm:results-window-show)][?]] | [[elisp:(blee:bnsm:results-window-set 0)][0]] | [[elisp:(blee:bnsm:results-window-set 1)][1]] | [[elisp:(blee:bnsm:results-window-set 2)][2]] | [[elisp:(blee:bnsm:results-window-set 3)][3]] ) || [[elisp:(lsip-local-run-command-here "echo pushd dest")][echo pushd dir]] || [[elisp:(lsip-local-run-command-here "lsf")][lsf]] || [[elisp:(lsip-local-run-command-here "pwd")][pwd]] |
 **  [[elisp:(org-cycle)][|#Destinations|]] :: [[Evolution]] | [[Maintainers]]  [[elisp:(org-cycle)][| ]]
@@ -19,32 +19,39 @@
 ####+END
 ####+BEGIN: blee:bxPanel:title :panelType "=bxPanel=" :title "auto"
 * [[elisp:(show-all)][(>]] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-*   [[img-link:file:/bisos/blee/env/images/fpfByStarElipseTop-50.png][http://www.freeprotocols.org]]_ _   ~Node:: cmdb/py3 -- panels~   [[img-link:file:/bisos/blee/env/images/fpfByStarElipseBottom-50.png][http://www.by-star.net]]
+*   [[img-link:file:/bisos/blee/env/images/fpfByStarElipseTop-50.png][http://www.freeprotocols.org]]_ _   ~Node:: py3/panels -- bisos.cmdb~   [[img-link:file:/bisos/blee/env/images/fpfByStarElipseBottom-50.png][http://www.by-star.net]]
 * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  [[elisp:(org-shifttab)][<)]] E|
 ####+END:
 ####+BEGIN: blee:bxPanel:terseTreeNavigator :panelsList "bxPanel"
 * [[elisp:(show-all)][(>]] [[elisp:(describe-function 'org-dblock-write:blee:bxPanel:terseTreeNavigator)][dbf]]
 * +
-*   =Decedents=  :: [[elisp:(blee:bnsm:panel-goto "/bisos/git/bxRepos/bisos-pip/cmdb/py3/panels/evolution/_nodeBase_")][ =evolution= ]] *|*
+*   =Decedents=  :: [[elisp:(blee:bnsm:panel-goto "/bisos/panels/bisos-core/bisos-pip/bisos.cmdb/README")][README]] *|*
 *                                        *━━━━━━━━━━━━━━━━━━━━━━━━*
-*   *Siblings*   :: [[elisp:(dired "/bisos/git/bxRepos/bisos-pip/cmdb/py3/.auctex-auto")][ ~.auctex-auto~ ]] *|* [[elisp:(dired "/bisos/git/bxRepos/bisos-pip/cmdb/py3/.mypy_cache")][ ~.mypy_cache~ ]] *|* [[elisp:(dired "/bisos/git/bxRepos/bisos-pip/cmdb/py3/bin")][ ~bin~ ]] *|* [[elisp:(dired "/bisos/git/bxRepos/bisos-pip/cmdb/py3/bisos")][ ~bisos~ ]] *|* [[elisp:(dired "/bisos/git/bxRepos/bisos-pip/cmdb/py3/bisos.cmdb.egg-info")][ ~bisos.cmdb.egg-info~ ]] *|*
-*   *Siblings*   :: [[elisp:(dired "/bisos/git/bxRepos/bisos-pip/cmdb/py3/dist")][ ~dist~ ]] *|* [[elisp:(blee:bnsm:panel-goto "/bisos/git/bxRepos/bisos-pip/cmdb/py3/panels/_nodeBase_")][ =panels= ]] *|*
-*   /Ancestors/  :: [[elisp:(blee:bnsm:panel-goto "//bisos/git/bxRepos/bisos-pip/cmdb/py3")][py3]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/git/bxRepos/bisos-pip/cmdb/_nodeBase_")][ =cmdb= ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/git/bxRepos/bisos-pip/_nodeBase_")][ =bisos-pip= ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/git/bxRepos/_nodeBase_")][ = /<bxRepos>/ = ]] *|* [[elisp:(dired "//bisos/git")][ ~git~ ]] *|*
-*   /Ancestors/  :: [[elisp:(dired "//bisos")][ ~bisos~ ]] *|*
+*   *Siblings*   :: [[elisp:(blee:bnsm:panel-goto "/bisos/panels/bisos-core/bisos-pip/bisos.cmdb/_nodeBase_")][ = /<bisos.cmdb>/ = ]] *|* [[elisp:(blee:bnsm:panel-goto "/bisos/panels/bisos-core/bisos-pip/bisos.facter/_nodeBase_")][ = /<bisos.facter>/ = ]] *|*
+*   /Ancestors/  :: [[elisp:(blee:bnsm:panel-goto "//bisos/panels/bisos-core/bisos-pip/_nodeBase_")][ =bisos-pip= ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/panels/bisos-core/_nodeBase_")][ =bisos-core= ]] *|* [[elisp:(blee:bnsm:panel-goto "//bisos/panels/_nodeBase_")][ = /<panels>/ = ]] *|* [[elisp:(dired "//bisos")][ ~bisos~ ]] *|*
 *                                   _━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━_                          [[elisp:(org-shifttab)][<)]] E|
 ####+END
 ####+BEGIN: blee:bxPanel:foldingSection :outLevel 1 :title "Overview" :anchor "Panel"
 * [[elisp:(show-all)][(>]]  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_  _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_       [[elisp:(outline-show-subtree+toggle)][| *Overview:* |]] <<Panel>>   [[elisp:(org-shifttab)][<)]] E|
 ####+END
 ** +
-** Scope of this panel is the BISOS-CMDB package. (Configuration Management DataBase)
+** Scope of this panel is the BISOS-CMDB pip package. (Configuration Management DataBase)
 ** B|
+####+BEGIN: blee:bxPanel:foldingSection :outLevel 1 :sep t :title "Design and Evolution" :anchor "" :extraInfo "TODOs"
+* /[[elisp:(beginning-of-buffer)][|^]]  [[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]] [[elisp:(delete-other-windows)][|1]]/
+* [[elisp:(show-all)][(>]]  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_  _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_       [[elisp:(outline-show-subtree+toggle)][| *Design and Evolution:* |]]  TODOs  [[elisp:(org-shifttab)][<)]] E|
+####+END
+** +
+** TODO Create cmdbFacter library
+** TODO cmdbDblock.cs will combine cmdbCntnrRepo and cmdbFacter to produce org based reports.
+** TODO [#B] Facter Based CMDB -- Build on  cmdbSummary of facter_csu.py
+** -
 * +
 * cmdbCntnrRepo.cs  -- Creates ~bpo/cmdb/description FPs, CreateAndPush the cmdb repo to bpo
 ** +
 ** TODO Guest and Host initializations need to be tested -- do not over write
 ** TODO During Container Realization, cmdbCntnrRepo.cs needs to be invoked.
-** TODO In cmdb next to description also create facter
+** TODO In cmdb next to description also create facter directory/repo
 ** -
 * cmdbCntnrVMs.cs   -- Based on cmdb repo FPs, adds title through virsh to VMs
 ** +
@@ -87,13 +94,14 @@
 #+STARTUP: inlineimages
 #+SEQ_TODO: TODO WAITING DELEGATED | DONE DEFERRED CANCELLED
 #+TAGS: @desk(d) @home(h) @work(w) @withInternet(i) @road(r) call(c) errand(e)
-#+CATEGORY: N:panels
+#+CATEGORY: N:bisos.cmdb
 
 ####+END
 ####+BEGIN: blee:bxPanel:footerEmacsParams :primMode "org-mode"
 * [[elisp:(show-all)][(>]] [[elisp:(describe-function 'org-dblock-write:blee:bxPanel:footerEmacsParams)][dbf]]
 * [[elisp:(show-all)][|n]]  _[[elisp:(blee:menu-sel:outline:popupMenu)][±]]_  _[[elisp:(blee:menu-sel:navigation:popupMenu)][Ξ]]_     [[elisp:(org-cycle)][| *= Emacs Local Params: =* | ]]
 # Local Variables:
+# eval: (setq-local toc-org-max-depth 4)
 # eval: (setq-local ~selectedSubject "noSubject")
 # eval: (setq-local ~primaryMajorMode 'org-mode)
 # eval: (setq-local ~blee:panelUpdater nil)
