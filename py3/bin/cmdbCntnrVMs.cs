@@ -86,7 +86,7 @@ import collections
 (setq  b:py:cs:csuList
   (list
    "bisos.b.cs.ro"
-   "blee.icmPlayer.bleep"
+   "bisos.csPlayer.bleep"
    "bisos.bpo.bpo"
    "bisos.b.fpCls"
    "bisos.b.clsMethod_csu"
@@ -96,7 +96,7 @@ import collections
  ))
 #+END_SRC
 #+RESULTS:
-| bisos.b.cs.ro | blee.icmPlayer.bleep | bisos.bpo.bpo | bisos.b.fpCls | bisos.b.clsMethod_csu | bisos.common.csCmndsRun | bisos.cmdb.cmdbCntnrRepo | bisos.cmdb.cmdbCntnrVMs |
+| bisos.b.cs.ro | bisos.csPlayer.bleep | bisos.bpo.bpo | bisos.b.fpCls | bisos.b.clsMethod_csu | bisos.common.csCmndsRun | bisos.cmdb.cmdbCntnrRepo | bisos.cmdb.cmdbCntnrVMs |
 #+end_org """
 
 ####+BEGIN: b:py3:cs:framework/csuListProc :pyImports t :csuImports t :csuParams t
@@ -105,7 +105,7 @@ import collections
 #+end_org """
 
 from bisos.b.cs import ro
-from blee.icmPlayer import bleep
+from bisos.csPlayer import bleep
 from bisos.bpo import bpo
 from bisos.b import fpCls
 from bisos.b import clsMethod_csu
@@ -114,7 +114,7 @@ from bisos.cmdb import cmdbCntnrRepo
 from bisos.cmdb import cmdbCntnrVMs
 
 
-csuList = [ 'bisos.b.cs.ro', 'blee.icmPlayer.bleep', 'bisos.bpo.bpo', 'bisos.b.fpCls', 'bisos.b.clsMethod_csu', 'bisos.common.csCmndsRun', 'bisos.cmdb.cmdbCntnrRepo', 'bisos.cmdb.cmdbCntnrVMs', ]
+csuList = [ 'bisos.b.cs.ro', 'bisos.csPlayer.bleep', 'bisos.bpo.bpo', 'bisos.b.fpCls', 'bisos.b.clsMethod_csu', 'bisos.common.csCmndsRun', 'bisos.cmdb.cmdbCntnrRepo', 'bisos.cmdb.cmdbCntnrVMs', ]
 
 g_importedCmndsModules = cs.csuList_importedModules(csuList)
 
@@ -166,7 +166,7 @@ class examples(cs.Cmnd):
 
         cs.examples.commonBrief()
 
-        bleep.examples_icmBasic()
+        bleep.examples_csBasic()
 
 
         """
